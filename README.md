@@ -109,13 +109,22 @@ The project operates as a sequential pipeline, where the output of one phase bec
 
 ## Project Structure
 AI-Lecture-Summarizer/
+
 ├── main.py                 # Main orchestration script
+
 ├── requirements.txt        # Project dependencies
+
 ├── lecture.mp4             # (Example input video)
+
 ├── lecture_summary.md      # (Example final output)
+
 └── workspace/              # Directory for intermediate files
+
     ├── 01_keyframes/       # Stores unique slide images
+    
     ├── 02_enhanced/        # Stores high-contrast images
+    
     └── 03_extracted_text.txt # Stores the raw OCR transcript
+    
 
   
