@@ -1,0 +1,493 @@
+--- Slide 1 ---
+Image Segmentation
+Image Segmentation is finding the group of pixels that are similar: It is partitioning the image into various subgroups (of pixels) called image objects: Assigning labels to pixels, and the pixels with the same labels fall under single category Using these labels, user can specify boundaries, draw lines and separate the most required objects in an image from unnecessary pixel label.
+
+--- Slide 2 ---
+Image Segmentation is finding the group of pixels that are similar: It is partitioning the image into various subgroups (of pixels) called image objects. Assigning labels to pixels, and the pixels with the same labels fall under single category Using these labels, user can specify boundaries, draw lines and separate the most required objects in an image from unnecessary pixel label:
+Types of Image Segmentation
+
+--- Slide 3 ---
+DCDDCID
+Co Prcr) CTTC CTI Pre- TO BI under single category: Using these labels, user can specify boundaries, draw lines and separate the most required objects in an image from unnecessary pixel label
+Types of Image Segmentation Semantic Segmentation: Every pixel belongs to a particular class (either background or   person): All the pixels   belonging to a particular class are represented by the same color: Instance Segmentation: In addition to assigning a particular class to each nixel  different obiects of same class will have different
+
+--- Slide 4 ---
+Types of Image Segmentation Semantic Segmentation: Every pixel belongs to a particular class (either  background or   person): All the pixels   belonging to a particular class are represented by the same color: Instance Segmentation: In addition to assigning a particular class to each pixel, different objects of same class will have different color as per the instance it belongs to.
+Petson
+Person
+Person
+Rerson
+Person Person 4
+Image 1
+lmage 2
+
+--- Slide 5 ---
+Semantic Segmentation: Every pixel belongs to a particular class (either background or  person): All the   pixels   belonging to a particular class are represented by the same color: Instance Segmentation: In addition to assigning a particular class to each pixel, different objects of same class will have different color as per the instance it belongs to.
+Petson
+Person
+Person
+Kerson
+Person Person
+Image 1
+lmage 2
+Need of Image Segmentation
+In addition to identifv the obiects from an image it also provides
+
+--- Slide 6 ---
+Person
+Person
+Person
+Kerson
+Pcrson
+Person
+Image 1
+Image 2
+Need of Image Segmentation
+In addition to identify the objects from an image, it also provides more insight information about an objects Applications: Facial recognition: attendance marking Medical industry: faster diagnosis, detecting diseases, tumors, cell and tissue patterns from radiography MRI, endoscopy, etc Satellite images: identify various patterns, objects, geographical contours, soil information for agriculture, mining, geo-sensing, etc Robotics: Rohotic nrocess automation Self-drivino cars etc
+
+--- Slide 7 ---
+Need of Image Segmentation
+In addition to identify the objects from an image, it also provides more insight information about an objects. Applications: Facial recognition: attendance marking Medical industry: faster diagnosis, detecting diseases, tumors, cell and tissue patterns from radiography, MRI, endoscopy, etc Satellite images: identify various patterns, objects, geographical contours soil information for agriculture, mining geo-sensing, etc Robotics: Robotic process automation, Self-driving cars, etc
+
+--- Slide 8 ---
+Facial recognition: attendance marking Medical industry: faster diagnosis, detecting diseases, tumors, cell and tissue patterns from radiography MRI, endoscopy, etc Satellite images: identify various patterns, objects, geographical contours, soil information for agriculture, mining, geo-sensing, etc Robotics: Robotic process automation, Self-driving cars, etc
+Classification ofthe Segmentation techniques
+Image Segmentation
+
+--- Slide 9 ---
+Classification of the Segmentation techniques
+Image Segmentation 
+Discontinuity (Boundary/Edge based approach)
+Similarity (Region  based Approach)
+eg: Thresholding Region Growing
+eg: Point Detection Line Detection
+
+--- Slide 10 ---
+Classification of the Segmentation techniques
+Image Segmentation
+Discontinuity (Boundary/Edge based approach)
+Similarity (Region based Approach)
+eg Thresholding Region Growing Region splitting & merging
+e.g: Point Detection Line Detection Edge Detection
+
+--- Slide 11 ---
+Classification of the Segmentation techniques
+Image Segmentation
+Discontinuity (Boundary/Edge based approach
+Similarity (Region based Approach)
+eg: Thresholding Region Growing Region splitting & merging
+e.g: Point Detection Line Detection Edge Detection
+
+--- Slide 12 ---
+Point Detection Line Detection Edge Detection
+Thresholding Region Growing Region splitting & merging
+Region Based Approach
+Threshold based Segmentation Global Threshold: if we want to divide the image into two regions (object and background), we define a single threshold value Local Threshold: If we have multiple objects along with background; we must define multiple thresholds These thresholds are collectively known as local threshold:
+
+--- Slide 13 ---
+Ubl
+merging
+Region Based Approach
+Threshold based Segmentation Global Threshold: if we want to divide the image into two regions (object and background), we define a single threshold value Local Threshold: If we have multiple objects along with background; we must define multiple thresholds These thresholds are collectively known as local threshold:
+
+--- Slide 14 ---
+Region Based Approach
+Threshold based Segmentation Global Threshold: if we want to divide the image into two regions (object and background), we define a single threshold value: Local Threshold: If we have multiple objects along with background, we must define multiple thresholds These thresholds are collectively known as local threshold:
+
+--- Slide 15 ---
+Threshold based Approaches
+Simple Thresholding
+
+--- Slide 16 ---
+Threshold based Approaches
+Simple Thresholding
+
+--- Slide 17 ---
+Threshold based Approaches
+Otsu's Binarization
+h() 2500.00
+2000.00
+1500.00
+1000.00
+500.00
+
+--- Slide 18 ---
+Threshold based Approaches
+Otsu's Binarization
+h() 2500.00
+2000.00
+1500.00
+1000.00
+500.00
+0.00 0.00
+50.00
+100.00
+150.00
+200.00
+250.00
+
+--- Slide 19 ---
+500.00
+0.00
+50.00
+100.00
+150.00
+200.00
+250.00
+2500.00
+Noise free
+Low noise
+High noise Zooo 00
+1500.00
+Nols €
+Low noise
+Hiqh noise
+1000.00
+
+--- Slide 20 ---
+2500.00
+Noise free
+Low noise
+High noise 2000.00
+1500.00
+Nolse free
+Low nois e
+Hiqh noise
+1000.00
+s00,00
+0.dd 0.Dd
+50.00
+100.00
+150.00
+20 0.00
+250.00
+
+--- Slide 21 ---
+2500.00
+Noise free
+Low noise
+High noise 2000.oo
+1500.00
+Nols €
+tgh nois @
+1doo,oo
+s00.00
+0.do
+50.00
+100.00
+150.00
+Z00.00
+250_00
+
+--- Slide 22 ---
+1500.00
+NoLs €
+Low nois e
+Hiqh noise
+ldooloo
+s00.00
+0.dd 0.Dd
+50.00
+100.00
+150.00
+20 0 00
+250.00
+Threshold based Approaches
+Adaptive Thresholding FIGURE 10.30 Original image: (b) Result of elobal thresholding: (c) Image subdivided into individual subimages (d) Kesull ol adaptive thresholding:
+
+--- Slide 23 ---
+Threshold based Approaches
+Adaptive Thresholding FIGURE 10.30 (a) Original image. (b) Result ol elobal thresholding: Iniape subdivided into individual subimages (d) Result of adaptive thresholding:
+
+--- Slide 24 ---
+Threshold based Approaches
+Adaptive Thresholding FIGURE 10.30 (a) Origmnal image. (b) Result global thresholding: Image subdivided into individual subimages (d) Result of adaptive thresholding:
+
+--- Slide 25 ---
+Region based Segmentation Creates Ssise{areltaratersviding the image into various   components having characteristics: Region-based image segmentation techniques initially search for some seed points either smaller parts or considerably bigger chunks in the input image Next,,either add more pixels to the seed points 0 further diminish or shrink the seed point to smaller  segments, and merge with   other smaller seed points
+Two approaches: Region growing Region Splitting and Merging
+
+--- Slide 26 ---
+Region based Segmentation Creates Ssife{zrecktiracterisyiding the image into various   components having characteristics: Region-based image segmentation techniques initially search for some seed points either smaller parts or considerably bigger chunks in the input image Next,,either add more pixels tothe seed points o further diminish or shrink the seed point to smaller  segments, and merge with other smaller seed points
+Two approaches: Region growing Region Splitting and Merging
+
+--- Slide 27 ---
+seed points either smaller parts or considerably bigger chunks in the input image. Next,,either add more pixels to the seed points 0 further diminish or shrink the seed point to smaller  segments, and merge with   other smaller seed points
+Two approaches: Region growing Region Splitting and Merging
+Discontinuity based Approaches
+Point Detection Line detection doo Dotoction
+
+--- Slide 28 ---
+Two approaches: Region growing Region Splitting and Merging
+Discontinuity based Approaches
+Point Detection Line detection Edge Detection
+
+--- Slide 29 ---
+Discontinuity based Approaches
+Point Detection Line detection Edge Detection
+
+--- Slide 30 ---
+Discontinuity based Approaches
+Point Detection Line detection Edge Detection
+
+--- Slide 31 ---
+Point Detection Based on Masking _
+Find response R The emphasis is strictly to detect points That is, differences those are large enough to be considered as isolated points:
+
+--- Slide 32 ---
+Point Detection Based on Masking _
+Find response R The emphasis is strictly to detect points That is, differences those are large etiough to be considered as isolated points So, compare and separate based on IRI > T Where R = Response of convolution T = Non negative threshold value
+
+--- Slide 33 ---
+Point Detection Based on Masking_
+Find response R The emphasis is strictly to detect points: That is, differences those are large enough to be considered as isolated points So, compare andkeparate based on Rl > T Where R = Response of convolution T= Non negative threshold value
+
+--- Slide 34 ---
+NIU TeSpUnse The emphasis is strictly to detect points That is, differences those are large enough to be considered as isolated points So, compare and separate based on Rl >T Where R = Response of convolution T= Non negative threshold value
+Point Detection(Example)
+Original
+Image after applying mask
+Thresholded image by T=8
+
+--- Slide 35 ---
+Point Detection(Example)
+Origina
+Image after applying mask
+Thresholded image by T=8
+
+--- Slide 36 ---
+Point Detection(Example)
+Original
+Image after applying mask
+Thresholded image by T-8
+
+--- Slide 37 ---
+Line Detection Horizontal Line 45 degree inclined Line
+Vertical Line
+45 degree inclined Line
+
+--- Slide 38 ---
+Line Detection Horizontal Line 45 degree inclined Line
+Vertical Line
+45 degree inclined Line
+
+--- Slide 39 ---
+Vertical Line
+45 degree inclined Line
+Line Detection(Cont:) Original Image Horizontal line detection 45 degree inclined line detection
+
+--- Slide 40 ---
+Line Detection(Cont:) Original Image Horizontal line deleciion 45 degree inclined line detection
+Ventical line detection
+135 degree inclined line detection
+
+--- Slide 41 ---
+Line Detection(Cont.) Original Image Horizontal line deleciion 45 degree inclined line detection
+Vemtical line detection
+135 degree inclined line detection
+
+--- Slide 42 ---
+Vemtical line detection
+135 degree inclined line detection
+Edge Detection Robert's Mask Prewitt Operator
+
+--- Slide 43 ---
+Edge Detection Robert's Mask Prewitt Operator
+SoheL Onerator
+Laplacian
+
+--- Slide 44 ---
+Edge Detection Robert' s Mask Prewitt Operator
+SoheLQneratar
+Laplacian
+
+--- Slide 45 ---
+Edge Detection Robert' s Mask Prewitt Operator
+SoheLQnerator
+Laplacian
+
+--- Slide 46 ---
+SoheLQnerator
+Laplacian
+Edge Detection(Example) Original Image Sobel-Horizonlal Edge
+
+--- Slide 47 ---
+Edge Detection(Example) Original Image Sobel-Horizonial Edge
+Sopel-Verical Edge
+Sobel Edge
+
+--- Slide 48 ---
+Edge Detection(Example) Original Image Sobel-Horizonial Edge
+SopelVerical Eoge
+Sobel-Edge
+
+--- Slide 49 ---
+Edge Detection(Example)
+Original
+Laplacian t0 unsharped image
+After Thresholding by 15%
+
+--- Slide 50 ---
+Edge Detection(Example)
+Original
+Laplacian t0 unsharped image
+After Thresholding by 15%
+
+--- Slide 51 ---
+Edge Detection(Example)
+Original
+Laplacian t0 unsharped image
+After Thresholding by 15%
+
+--- Slide 52 ---
+Other methods
+Clustering Artificial Neural Network
+
+--- Slide 53 ---
+Other methods
+Clustering Artificial Neural Network
+
+--- Slide 54 ---
+Other methods
+Clustering Artificial Neural Network
+
+--- Slide 55 ---
+Feature Analysis
+
+--- Slide 56 ---
+Feature Analysis
+
+--- Slide 57 ---
+Feature Analysis
+Feature Analysis in Image Processing
+In image processing, feature analysis typically starts with feature extraction, which turns raw pixels into more informative and condensed representations:
+
+--- Slide 58 ---
+Feature Analysis in Image Processing
+In image processing, feature analysis typically starts with feature extraction, which turns raw pixels into more informative and condensed representations: Types of image features: Edges: Boundaries between regions identified by algorithms like Canny or Sobel Corners: Points where twvo edges meet; Blobs: Regions with differing properties, found with Laplacian of Gaussian Or Difference of Gaussians_ Texture: Patterns and  repetitions, described by methods like Local   Binary Patterns (LBP): Shapes: Outlines and regions, detected using contour or geometric analysis
+
+--- Slide 59 ---
+Feature Analysis in Image Processing
+In image processing, feature analysis typically starts with feature extraction, which turns raw pixels into more informative and condensed representations: Types of image features: Edges: Boundaries between regions identified by algorithms like Canny or Sobel Corners: Points where two edges meet; Blobs: Regions with differing properties, found with Laplacian of Gaussian Or Difference of Gaussians_ Texture: Patterns and  repetitions, described by methods like Local   Binary Patterns (LBP): Shapes: Outlines and regions, detected using contour or geometric analysis
+
+--- Slide 60 ---
+Feature Analysis in Image Processing
+In image processing, feature analysis typically starts with feature extraction, which turns raw pixels into more informative and condensed representations: Types of image features: Edges: Boundaries between regions identified by algorithms like Canny or Sobel: Corners: Points where two edges meet; Blobs: Regions with differing properties, found with Laplacian of Gaussian or Difference of Gaussianst Texture: Patterns and  repetitions, described by methods like Local  Binary Patterns (LBP): Shapes: Outlines and regions, detected using contour or geometric analysis:
+
+--- Slide 61 ---
+Feature Analysis in Image Processing
+In image processing, feature analysis typically starts with feature extraction, which turns raw pixels into more informative and condensed representations: Types of image features: Edges: Boundaries between regions identified by algorithms like Canny or Sobel: Corners: Points where two edges meet; Blobs: Regions with differing properties, found with Laplacian of Gaussian or Difference of Gaussians. Texture: Patterns and  repetitions, described by methods like Local   Binary Patterns (LBP): Shapes: Outlines and regions, detected using contour or geometric analysis:
+
+--- Slide 62 ---
+Patterns (LBP): Shapes: Outlines and regions, detected using contour or geometric analysis:
+Feature Descriptors
+Feature descriptors: Transform image features into numerical vectors (feature   vectors) So algorithms can compare, match, or classify them: Common descriptors incllde: SIFT (Scale-Invariant Feature Transform): Detects key points robust to scale, translation and rotation: SURF (Speeded-Up Robust Features): Similar to SIFT but computationally faster ORB: Combines FAST detector and BRIEF   descriptor for real-time applications:
+
+--- Slide 63 ---
+Feature Descriptors
+Feature descriptors: Transform   image features into numerical vectors (feature   vectors) SO algorithms can compare, match, or classify them: Common descriptors include: SIFT (Scale-Invariant Feature Transform): Detects key points robust to scale, translation and rotation: SURF (Speeded-Up Robust Features): Similar to SIFT but computationally faster ORB: Combines FAST detector and BRIEF   descriptor for real-time applications
+
+--- Slide 64 ---
+Feature Descriptors
+Feature descriptors: Transform image features into numerical vectors (feature   vectors) so   algorithms can compare, match, or classify them: Common descriptors include: SIFT (Scale-Invariant Feature Transform): Detects key points robust to scale, translation and rotation: SURF (Speeded-Up Robust Features): Similar to SIFT but computationally faster ORB: Combines FASF detector and BRIEF   descriptor for real-time applications
+
+--- Slide 65 ---
+Feature descriptors: Transform image features into numerical vectors (feature   vectors) So algorithms can compare, match, or classify them: Common descriptors include: SIFT (Scale-Invariant Feature Transform): Detects key points robust to scale, translation and rotation: SURF (Speeded-Up Robust Features): Similar to SIFT but computationally faster ORB: Combines FAST detector and BRIEF descriptor for real-time applications
+SIFT detector
+
+--- Slide 66 ---
+SIFT detector
+How would you recognize following type of objects?
+Find and match interesting points or features
+Template
+Rich 2D image
+Spke . Jonze]
+
+--- Slide 67 ---
+SIFT detector
+How would you recognize following type of objects?
+Find and match interesting points or features
+Template
+Rich 2D image
+https: / /fpcv.cs columbia edu/
+Spkke . Jonze
+
+--- Slide 68 ---
+DT
+4cccco
+How would you recognize following type of objects?
+Find and match interesting points or features
+Template
+Rich 2D image
+https: / /fpcv.cs columbiaedu/
+SIFT Detector
+Spke . Jonze
+
+--- Slide 69 ---
+https: / /fpcvcs_columbia edu/
+SIFT Detector
+Scale Invariant Feature Transform (SIFT) and it is used for image alignment/stitching and 2D object recognition. What is an interesting point in an image? edge and corner are not interest points compared to blobs. How to detect blobs? Developing SIFT detector How to get the SIFT Descriptor?
+
+--- Slide 70 ---
+SIFT Detector
+Scale Invariant Feature Transform (SIFT) and it is used for image alignment/stitching and 2D object recognition: What is an interesting point in an image? edge and corner are not interest points compared to blobs. How to detect blobs? Developing SIFT detector How to get the SIFT Descriptor?
+
+--- Slide 71 ---
+SIFT Detector
+Scale Invariant Feature Transform (SIFT) and it is used for image alignment/stitching and 2D object recognition: What is an interesting point in an image? edge and corner are not interest points compared to blobs: How to detect blobs? Developing SIFT detector How to get the SIFT Descriptor?
+
+--- Slide 72 ---
+How to get the SIFT Descriptor?
+Interest point
+Raw images are hard to match because of different size, orientation, lighting, hxightness, etc
+
+--- Slide 73 ---
+Interest point
+Raw images are hard to match because of different size, orientation, lighting, brightness, etc
+
+--- Slide 74 ---
+Removing Sources of variation
+
+--- Slide 75 ---
+Removing Sources of variation
+
+--- Slide 76 ---
+What is an interesting point/feature?
+Ithas rich image content (brightness variation, color variation, etc) within the local window:
+
+--- Slide 77 ---
+What is an interesting point/feature?
+Ithas rich image content (brightness variation, color variation, etc) within the local window: It should have well-defined representation (signature) for matching/comparing with other points. It should have a well-defined position in the image. It should be invariantto image rotation and scaling: It should be insensitive to lighting changes.
+
+--- Slide 78 ---
+What is an interesting point/feature?
+It has rich image content (brightness variation, color variation, etc) within the local window: It should have well-defined representation (signature) for matching/comparing with other points. It should have a well-defined position in the image: It should be invariant to image rotation and scaling: It should be insensitive to lighting changes.
+
+--- Slide 79 ---
+etc) within the local window: It should have well-defined representation (signature) for matching/comparing with other points. It should have a well-defined position in the image It should be invariant to image rotation and scaling: It should be insensitive to lighting changes.
+Are lines/edges and corners interesting points?
+
+--- Slide 80 ---
+SIIOUIU De mSenS]Ve L 11g11g cnanges:
+Are lines/edges and corners interesting points?
+
+--- Slide 81 ---
+Are lines/edges and corners interesting points?
+
+--- Slide 82 ---
+Are blobs interesting points?
+Blobs have fixed position and definite size: For a blob like feature: Locate the blob Determine its size Determine its description or signature that is independent of size and orientation:
+
+--- Slide 83 ---
+Are blobs interesting points?
+Blobs have fixed position and definite size. For a blob like feature: Locate the blob Determine its Size Determine its description or signature that is independent of size and orientation:
+Awiulw
+
+--- Slide 84 ---
+Are blobs interesting points? Blobs have fixed position and definite size For a blob like feature: Locate the blob Determine its size Determine its description or signature that is independent of size and orientation:
+Anulv
+
+--- Slide 85 ---
+Are blobs interesting points?
+Blobs have fixed position and definite size. For a blob like feature: Locate the blob Determine its size Determine its description or signature that is independent of size and orientation:
+^nuln
