@@ -118,13 +118,10 @@ AI-Lecture-Summarizer/
 
 ├── lecture_summary.md      # (Example final output)
 
-└── workspace/              # Directory for intermediate files
-
-    ├── 01_keyframes/       # Stores unique slide images
-    
-    ├── 02_enhanced/        # Stores high-contrast images
-    
-    └── 03_extracted_text.txt # Stores the raw OCR transcript
+└── workspace/              
+    ├── 01_keyframes/       
+    ├── 02_enhanced/       
+    └── 03_extracted_text.txt
     
 
   
