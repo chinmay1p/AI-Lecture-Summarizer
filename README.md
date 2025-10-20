@@ -2,7 +2,6 @@
 
 This project is an end-to-end pipeline that automatically summarizes video lectures. It ingests a video file, uses computer vision to extract and read text from presentation slides, and then leverages a Large Language Model (LLM) to generate a concise, structured summary.
 
-This pipeline was developed as a project for a "Computer Vision with Deep Learning" course, applying core concepts such as image processing, CNN-based feature extraction, and transfer learning.
 
 ## Features
 
