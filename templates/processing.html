@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processing Video - SlideSense</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="/" class="logo">
+                <div class="logo-icon">S</div>
+                SlideSense
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <div class="processing-container">
+            <div class="processing-icon">
+                <svg fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd"></path>
+                </svg>
+            </div>
+            <h2 class="processing-title">Processing Your Lecture Video</h2>
+            <p class="text-center mb-6" style="color: var(--text-secondary);">
+                This may take a few minutes depending on video length and complexity.
+            </p>
+            <div class="processing-steps">
+                <div class="processing-step">
+                    <div class="step-icon active">1</div>
+                    <div class="step-text active">Analyzing video & extracting keyframes...</div>
+                </div>
+                <div class="processing-step">
+                    <div class="step-icon pending">2</div>
+                    <div class="step-text">Enhancing slide contrast...</div>
+                </div>
+                <div class="processing-step">
+                    <div class="step-icon pending">3</div>
+                    <div class="step-text">Recognizing text from slides...</div>
+                </div>
+                <div class="processing-step">
+                    <div class="step-icon pending">4</div>
+                    <div class="step-text">Generating your summary...</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Get video path from URL parameters
+        function getUrlParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Simulate step progression
+        function simulateStepProgression() {
+            const steps = document.querySelectorAll('.processing-step');
+            let currentStep = 0;
+
+            const stepInterval = setInterval(() => {
+                if (currentStep < steps.length) {
+                    // Mark current step as completed
+                    if (currentStep > 0) {
+                        const prevStep = steps[currentStep - 1];
+                        const prevIcon = prevStep.querySelector('.step-icon');
+                        const prevText = prevStep.querySelector('.step-text');
+                        
+                        prevIcon.classList.remove('active');
+                        prevIcon.classList.add('completed');
+                        prevText.classList.remove('active');
+                        prevText.classList.add('completed');
+                    }
+
+                    // Mark next step as active
+                    if (currentStep < steps.length) {
+                        const currentStepEl = steps[currentStep];
+                        const currentIcon = currentStepEl.querySelector('.step-icon');
+                        const currentText = currentStepEl.querySelector('.step-text');
+                        
+                        currentIcon.classList.remove('pending');
+                        currentIcon.classList.add('active');
+                        currentText.classList.remove('pending');
+                        currentText.classList.add('active');
+                    }
+
+                    currentStep++;
+                } else {
+                    clearInterval(stepInterval);
+                    // After all steps are complete, redirect to actual processing
+                    const videoPath = getUrlParameter('video_path');
+                    if (videoPath) {
+                        window.location.href = `/process_video?video_path=${encodeURIComponent(videoPath)}`;
+                    }
+                }
+            }, 2000); // Change step every 2 seconds
+        }
+
+        // Start step progression when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            simulateStepProgression();
+        });
+    </script>
+</body>
+</html>

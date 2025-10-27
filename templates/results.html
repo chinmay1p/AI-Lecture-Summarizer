@@ -3,28 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Summary Results</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Lecture Summary - SlideSense</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
-<body class="bg-gray-100">
-    <nav class="bg-white shadow-lg">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="flex justify-between">
-                <div class="flex space-x-7">
-                    <div>
-                        <a href="/" class="flex items-center py-4 px-2">
-                            <span class="font-semibold text-gray-500 text-lg">Video Processor</span>
-                        </a>
-                    </div>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="/" class="logo">
+                <div class="logo-icon">S</div>
+                SlideSense
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <div class="results-container">
+            <!-- Results Card -->
+            <div class="results-card">
+                <div class="results-header">
+                    <h1 class="results-title">Your Lecture Summary</h1>
+                    <button class="copy-button" id="copyButton" onclick="copySummary()">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z"></path>
+                            <path d="M6 3a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2 3 3 0 01-3 3H9a3 3 0 01-3-3z"></path>
+                        </svg>
+                        Copy Summary
+                    </button>
                 </div>
+                
+                <!-- Summary Content Area -->
+                <div class="summary-content-area" id="summaryContent">
+                    <!-- Markdown content will be parsed and rendered here -->
+                </div>
+                
+                <!-- Hidden div containing raw markdown -->
+                <div id="rawMarkdown" style="display: none;">{{ summary_content | safe }}</div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="text-center">
+                <a href="/" class="copy-button" style="text-decoration: none; display: inline-flex;">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                    Process Another Video
+                </a>
             </div>
         </div>
-    </nav>
-    <div class="container mx-auto mt-10">
-        <div class="w-full max-w-4xl mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-            <h1 class="text-2xl font-bold mb-4">Generated Summary</h1>
-            <pre class="bg-gray-200 p-4 rounded">{{ summary_content }}</pre>
-        </div>
-    </div>
+    </main>
+
+    <script>
+        function copySummary() {
+            const summaryContent = document.getElementById('summaryContent');
+            const copyButton = document.getElementById('copyButton');
+            
+            // Create a temporary textarea to copy the text
+            const textarea = document.createElement('textarea');
+            textarea.value = summaryContent.innerText;
+            document.body.appendChild(textarea);
+            textarea.select();
+            
+            try {
+                document.execCommand('copy');
+                copyButton.innerHTML = `
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    Copied!
+                `;
+                copyButton.classList.add('copied');
+                
+                // Reset button after 2 seconds
+                setTimeout(() => {
+                    copyButton.innerHTML = `
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z"></path>
+                            <path d="M6 3a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2 3 3 0 01-3 3H9a3 3 0 01-3-3z"></path>
+                        </svg>
+                        Copy Summary
+                    `;
+                    copyButton.classList.remove('copied');
+                }, 2000);
+            } catch (err) {
+                console.error('Failed to copy text: ', err);
+            }
+            
+            document.body.removeChild(textarea);
+        }
+
+        // Auto-scroll to top of summary content and parse markdown
+        document.addEventListener('DOMContentLoaded', function() {
+            const summaryContent = document.getElementById('summaryContent');
+            const rawMarkdown = document.getElementById('rawMarkdown');
+            
+            if (summaryContent && rawMarkdown) {
+                // Parse markdown and render as HTML
+                const markdownText = rawMarkdown.textContent;
+                const htmlContent = marked.parse(markdownText);
+                summaryContent.innerHTML = htmlContent;
+                
+                // Scroll to top
+                summaryContent.scrollTop = 0;
+            }
+        });
+    </script>
 </body>
 </html>
