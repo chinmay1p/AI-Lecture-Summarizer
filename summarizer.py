@@ -8,7 +8,7 @@ def _get_model():
     global _model
     if _model is None:
         load_dotenv()
-        api_key = "AIzaSyA_-ec_AuXRXaUZXLf2HekX1Z7nZvfg92g"
+        api_key = os.getenv("GEMINI_API_KEY")
         if not api_key:
             raise ValueError("GEMINI_API_KEY not found. Please set it in a .env file.")
         genai.configure(api_key=api_key)
